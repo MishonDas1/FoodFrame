@@ -1,0 +1,97 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page base */
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    font-family: 'Caesar Dressing', cursive;
+    /* responsive base font-size */
+    font-size: clamp(1.25rem, 2.2vw + 0.8rem, 4rem);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Hide elements by default if JS controls them */
+.hide{
+    visibility: hidden;
+}
+
+/* Click button area - flow with page, not absolutely positioned */
+.click-me{
+    margin: 1rem 0;
+}
+
+.btn {
+    border-radius: 8px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Concert One', cursive;
+    /* responsive font-size and padding */
+    font-size: clamp(1rem, 2.2vw, 2.2rem);
+    padding: clamp(10px, 1.5vw, 22px) clamp(16px, 3vw, 36px);
+    min-width: 160px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+.btn:hover {
+    background-color: #be340a;
+    transform: translateY(-2px);
+}
+
+/* Intro text that appears after clicking */
+.hello,
+.ready{
+    display: none; /* JS shows/hides these */
+    margin: 0.4rem 0;
+}
+
+/* Main content area (shown by JS) */
+.content{
+    display: none; /* controlled by JS */
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 1rem;
+}
+
+.site-name{
+    font-size: clamp(1.25rem, 3.2vw, 3rem);
+    margin-bottom: 0.6rem;
+}
+
+.comming-soon h1{
+    font-size: clamp(1rem, 3vw, 2.4rem);
+}
+
+/* Small screens adjustments */
+@media (max-width: 480px){
+    body{ padding: 0.8rem; }
+    .btn{ min-width: 140px; font-size: clamp(0.95rem, 3.5vw, 1.6rem); }
+    .site-name{ font-size: clamp(1rem, 4vw, 1.8rem); }
+    .comming-soon h1{ font-size: clamp(0.95rem, 4vw, 1.6rem); }
+}
+
+/* Very large screens: constrain size so layout stays pleasant */
+@media (min-width: 1600px){
+    body{ max-width: 1400px; margin: 0 auto; }
+}
+
+/* Small usability tweak: focus states for keyboard users */
+.btn:focus{ outline: 3px solid rgba(244,81,30,0.25); outline-offset: 2px; }
+
+/* Keep transition-friendly minimal rules to avoid interfering with JS animations */
+
+

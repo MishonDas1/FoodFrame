@@ -1,51 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodFrame</title>
-    <link rel="stylesheet" href="page.css">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Frame</title>
+  <link rel="stylesheet" href="page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img class="brand-logo" src="Orange Modern Icon Food Logo.png" alt="Food Frame logo" />
+        <div class="brand-name">Food Frame</div>
+      </div>
+      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+      </button>
 
- <div>
-    <div class="navbar">
-        <img src="Orange Modern Icon Food Logo.png" alt="FoodFrame logo" class="logo">
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
-            <a href="#">Testimonials</a>
-            <a href="#">Gallery</a>
-            <a href="#"><button id="btn3">Log-in</button></a>
-            
-        </div>
+      <nav id="primary-menu" class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Menu</a>
+        <a href="#">Testimonial</a>
+        <a href="#">Gallery</a>
+        <a class="login" href="#">Log‑In</a>
+      </nav>
     </div>
- </div>
+  </header>
 
-    <div class="Main">
-        <div class="left">
-            <h1 class="food">Food  Frame</h1>
-            <p class="text">Make your day special <br>
-                with our delicious meals!</p>
+  <main class="hero">
+    <div class="container hero-grid">
+      <section>
+        <div class="eyebrow">Food Frame</div>
+        <h4 class="headline">Make your day special <br> with our delicious meals!</h4>
+        <p class="copy">Welcome to Food Frame — where every flavor paints a story and every meal feels like art.</p>
 
-            <p class="text1">Welcome to Food Frame — where every flavor paints a story and every meal feels like art.</p>
-            <button id="btn1">Contact Us</button>
-            <button id="btn2">All Food</button>
-
-
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#">Contact US</a>
+          <a class="btn btn-ghost" href="#">All‑Food</a>
         </div>
 
-        <div class="right">
-
-            <img src="New Project (1) 1 (1).png" alt="">
-
+        <div class="socials">
+          <a class="social" href="#">
+            <svg viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.87 6.48 1.87 12.07c0 4.99 3.64 9.13 8.4 9.93v-7.02H7.9v-2.91h2.37V9.41c0-2.35 1.4-3.65 3.54-3.65 1.03 0 2.11.18 2.11.18v2.33h-1.19c-1.18 0-1.55.73-1.55 1.48v1.78h2.64l-.42 2.91h-2.22V22c4.76-.8 8.4-4.94 8.4-9.93z"/></svg>
+          </a>
+          <a class="social" href="#">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-3.09a15.9 15.9 0 0 0-1.2-3.33A8.03 8.03 0 0 1 18.93 8zM12 4c.78 0 1.88 1.42 2.58 4H9.42C10.12 5.42 11.22 4 12 4zM4.07 8a8.03 8.03 0 0 1 4.29-3.33A15.9 15.9 0 0 0 7.16 8H4.07zM4 12c0-.68.05-1.35.16-2h3.33a22.4 22.4 0 0 0 0 4H4.16c-.11-.65-.16-1.32-.16-2zm.07 4h3.09c.22 1.15.62 2.29 1.2 3.33A8.03 8.03 0 0 1 4.07 16zM12 20c-.78 0-1.88-1.42-2.58-4h5.16C13.88 18.58 12.78 20 12 20zm3.78-2.67c.58-1.04.98-2.18 1.2-3.33h3.09a8.03 8.03 0 0 1-4.29 3.33zM16.51 12c-.09 1.36-.39 2.68-.87 3.87H8.36A17.7 17.7 0 0 1 7.49 12c.09-1.36.39-2.68.87-3.87h7.28c.48 1.19.78 2.51.87 3.87z"/></svg>
+          </a>
         </div>
+      </section>
 
+      <aside class="hero-art">
+        <img class="chef-img" src="New Project (1) 1 (1).png" alt="Chef Image" />
+      </aside>
     </div>
-    
+  </main>
+  <script>
+    (function () {
+      var toggle = document.querySelector('.menu-toggle');
+      var menu = document.getElementById('primary-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function () {
+        var isOpen = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
-
 </html>
-

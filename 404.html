@@ -1,1 +1,59 @@
-<h1>Not Found </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Not Found</title>
+  <style>
+    :root{--bg1:#040617;--bg2:#08121a;--glass:rgba(255,255,255,0.04);--muted:#9aa6b2;--accent:#22c55e}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#eaf3ff;display:flex;align-items:center;justify-content:center}
+    .wrap{width:1100px;max-width:94%;display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+    .left{padding:36px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:14px;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
+    .num{font-size:110px;line-height:0.85;font-weight:800;letter-spacing:-6px;color:transparent;background:linear-gradient(90deg,#ffffff, #a6f3c5);-webkit-background-clip:text;background-clip:text;text-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .title{font-size:22px;margin-top:8px}
+    .desc{color:var(--muted);margin-top:12px;font-size:15px}
+    .actions{margin-top:18px;display:flex;gap:12px}
+    .btn{background:var(--accent);color:#042012;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .card{padding:28px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 10px 30px rgba(2,6,23,0.5)}
+    .meta{color:var(--muted);font-size:13px;margin-top:10px}
+    .host{margin-top:18px;text-align:right;color:var(--muted);font-size:13px}
+    @media (max-width:880px){.wrap{grid-template-columns:1fr;gap:18px}.num{font-size:72px}}
+    /* subtle float animation */
+    .card{transform:translateZ(0);transition:transform .45s cubic-bezier(.2,.9,.3,1)}
+    .card:hover{transform:translateY(-6px)}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="left">
+      <div class="num">404</div>
+      <div class="title">Page Not Found</div>
+      <div class="desc">We couldn't find the page you're looking for. It might have been removed, had its name changed, or is temporarily unavailable.</div>
+      <div class="actions">
+        <a class="btn" href="index.html">Go Home</a>
+        <a class="btn ghost" href="javascript:history.back()">Go Back</a>
+      </div>
+      <div class="meta">Tip: Check the URL for typos or try searching from the homepage.</div>
+    </section>
+
+    <aside>
+      <div class="card">
+        <h3 style="margin:0 0 8px 0">Need help?</h3>
+        <p style="color:var(--muted);margin:0 0 12px 0">If you believe this is an error, contact the site owner or try returning to the homepage.</p>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,#0ea47a,#078a55);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042012">M</div>
+          <div>
+            <div style="font-weight:700">Mishon Das Arnab</div>
+            <div style="color:var(--muted);font-size:13px">Hosted by Mishon Das Arnab</div>
+          </div>
+        </div>
+      </div>
+      <div class="host">Hosted by Mishon Das Arnab</div>
+    </aside>
+  </main>
+</body>
+</html>
+

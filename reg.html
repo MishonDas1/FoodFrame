@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" type="text/css" href="Registyle.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>User Registration</title>
+</head>
+<body>
+ <h1>New User Registration</h1>
+
+ <form action="/register-new-user" method="POST">
+
+ <div>
+ <label for="full_name">Full Name:</label>
+ <input type="text" id="full_name" name="full_name" placeholder="Enter your name"
+required >
+ </div>
+
+ <div>
+ <label for="email">Email Address:</label>
+ <input type="email" id="email" name="email_address" placeholder="Enter your
+email_address" required>
+ </div>
+
+ <div>
+ <label for="password">Password:</label>
+ <input type="password" id="password" name="user_password" >
+ </div>
+ <div>
+ <label for="dob">Date of Birth:</label>
+ <input type="date" id="dob" name="date_of_birth">
+ </div>
+
+ <fieldset>
+ <legend>Gender</legend>
+ <input type="radio" id="gender_male" name="gender" value="male" required>
+ <label for="gender_male">Male</label>
+
+ <input type="radio" id="gender_female" name="gender" value="female">
+ <label for="gender_female">Female</label>
+
+ <input type="radio" id="gender_other" name="gender" value="other">
+ <label for="gender_other">Other</label>
+ </fieldset>
+ <div style="margin-top: 15px;">
+ <input type="checkbox" id="terms" name="accept_terms" required>
+ <label for="terms">I agree to the <a
+href="https://www.facebook.com/share/1Bd6KgEkKs/" target="_blank">OUR FACEBOOK
+PAGE</a></label>
+ </div>
+
+ <div style="margin-top: 20px;">
+ <button type="submit">Register Now</button>
+ </div>
+
+ </form>
+</body>
+</html>

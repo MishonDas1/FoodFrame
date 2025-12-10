@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="Registyle.css" />
+</head>
+<body>
+    <div class="reg-container">
+        <div class="reg-card">
+            <h2>New User Registration</h2>
+            <p class="subtitle">Create your account — it only takes a minute.</p>
+
+            <form class="reg-form" action="/register-new-user" method="POST" novalidate>
+                <div>
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter your name" required />
+                </div>
+
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email_address" placeholder="you@example.com" required />
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="user_password" placeholder="Choose a secure password" required />
+                </div>
+
+                <div>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="date_of_birth" />
+                </div>
+
+                <div class="full-row">
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <div class="radio-group">
+                            <label class="inline">
+                                <input type="radio" id="gender_male" name="gender" value="male" required />
+                                <span>Male</span>
+                            </label>
+
+                            <label class="inline">
+                                <input type="radio" id="gender_female" name="gender" value="female" />
+                                <span>Female</span>
+                            </label>
+
+                            <label class="inline">
+                                <input type="radio" id="gender_other" name="gender" value="other" />
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="full-row">
+                    <label class="inline" style="gap:8px">
+                        <input type="checkbox" id="terms" name="accept_terms" required />
+                        <span>I agree to the <a href="https://www.facebook.com/share/1Bd6KgEkKs/" target="_blank" rel="noopener">OUR FACEBOOK PAGE</a></span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn secondary" aria-label="Reset form">Reset</button>
+                    <button type="submit" class="btn primary" aria-label="Register now">Register Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

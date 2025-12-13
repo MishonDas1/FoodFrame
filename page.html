@@ -26,8 +26,31 @@
         <a href="#">Menu</a>
         <a href="#">Testimonial</a>
         <a href="#">Gallery</a>
+        <button class="cart-btn" id="cart-toggle" type="button" aria-label="View Cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.49 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
         <a class="login" href="login.html">Log‑In</a>
       </nav>
+
+      <!-- Cart Dropdown -->
+      <div class="cart-dropdown" id="cart-dropdown">
+        <div class="cart-header">
+          <h3>Your Cart</h3>
+          <button class="cart-close" id="cart-close" type="button" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+          <p class="cart-empty">Your cart is empty</p>
+        </div>
+        <div class="cart-footer" id="cart-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">৳0</span>
+          </div>
+          <button class="cart-checkout-btn" type="button">Checkout</button>
+          <button class="cart-clear-btn" id="cart-clear" type="button">Clear Cart</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -111,6 +134,135 @@
   </div>
 </section>
 
+
+<!-- End Azim Section -->
+
+  <!-- Mahmud Section -->
+  <section class="mahmud-products-section" aria-labelledby="best-selling-products">
+    <div class="mahmud-shell">
+      <div class="mahmud-header">
+        <h2 id="best-selling-products">Best Selling Products</h2>
+      </div>
+
+      <div class="mahmud-grid">
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/6pbPh7cQ/3.png" alt="Chicken Biryani" />
+          <h3>Chicken Biryani</h3>
+          <p class="mahmud-price">৳280</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/nVTGmy0s/4.png" alt="Kacchi King Platter" />
+          <h3>Kacchi King Platter</h3>
+          <p class="mahmud-price"><span class="mahmud-old">৳380</span> ৳350</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/d3WRKCLb/5.png" alt="Bhuna Khichuri" />
+          <h3>Bhuna Khichuri</h3>
+          <p class="mahmud-price"><span class="mahmud-old">৳410</span> ৳380</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/D0CQKG8Y/6.png" alt="Special Pizza" />
+          <h3>Special Pizza</h3>
+          <p class="mahmud-price">৳450</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/ZnfPhNCv/7.png" alt="Fiery Chicken Burger" />
+          <h3>Fiery Chicken Burger</h3>
+          <p class="mahmud-price"><span class="mahmud-old">৳300</span> ৳260</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/Wz9mPZhG/8.png" alt="Iced Lemon Mint" />
+          <h3>Iced Lemon Mint</h3>
+          <p class="mahmud-price">৳140</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/cC17jh43/9.png" alt="Mango Magic Shake" />
+          <h3>Mango Magic Shake</h3>
+          <p class="mahmud-price">৳145</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/Y02NVRq1/10.png" alt="Food Frame Special Platter" />
+          <h3>Food Frame Special Platter</h3>
+          <p class="mahmud-price">৳420</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+      </div>
+
+      <div class="mahmud-btn-row">
+        <button class="mahmud-btn" type="button">VIEW ALL</button>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Mahmud Section -->
+
+<!-- Farzana lima-->
+
+    <section class="about-section">
+        <div class="about-container">
+
+            <div class="about-img">
+                <img src="https://i.postimg.cc/X7yfSkGL/(11).png" alt="Chef Image">
+            </div>
+
+            <div class="about-text">
+                <h2 class="about-title">Our Story</h2>
+                <h3 class="about-subtitle">The Taste Behind Food Frame</h3>
+
+                <p>
+                    In the heart of Dhaka, 2025 marked the beginning of a flavorful journey called 
+                    <strong>Food Frame Restaurant</strong> — a dream born from love for food and the passion
+                    to bring people together through taste.
+                </p>
+
+                <p>
+                    It all started with a simple idea:<br>
+                    <em>"Every meal deserves a perfect frame."</em>
+                </p>
+
+                <p>
+                    Our founders wanted to create more than just a restaurant — they wanted to build a place
+                    where Bangladeshi tradition meets modern taste, where every dish is crafted like a piece
+                    of art.
+                </p>
+
+                <p>
+                    From the aromatic Kacchi Biryani to the sizzling Fiery Chicken Burger, every plate carries
+                    a story — a story of home, spice, and happiness.
+                </p>
+
+                <p>
+                    Food Frame isn’t just about eating; it’s about experiencing food. Whether it’s the laughter
+                    of friends over crispy fuchka, a family dinner with kala bhuna, or a quiet moment with iced
+                    lemon mint — every moment becomes a memory.
+                </p>
+
+                <p>
+                    Today, Food Frame stands proudly as a symbol of taste, quality, and creativity — serving
+                    flavors that define Bangladesh.  
+                    <strong>Food Frame Restaurant — Every flavor tells a story.</strong>
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Farzana lima-->
+
+  <script src="cart.js"></script>
   <script>
     (function () {
       var toggle = document.querySelector('.menu-toggle');

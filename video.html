@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #000;
+        }
+
+        .video-info {
+            padding: 12px 15px;
+        }
+
+        .video-info h3 {
+            font-size: 16px;
+            color: #222;
+            margin-bottom: 6px;
+        }
+
+        .video-info p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Video Gallery</h1>
+
+    <div class="video-gallery">
+
+        <div class="video-card">
+            <video controls>
+                <source src="Facebook.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-info">
+                <h3>Tutorial Video </h3>
+                <p>Basic Tutorial of Our project,Presented By Mishon Das Arnab</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-info">
+                <h3>Sample Video 2</h3>
+                <p>Description or details here</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-info">
+                <h3>Sample Video 3</h3>
+                <p>Description or details here</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

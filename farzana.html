@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farzana Chowdhury - Food Frame</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111;
+            font-family: "Times New Roman", serif;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: #92ff1e;
+            color: #111;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .card {
+            width: 760px;
+            height: 420px;
+            background: linear-gradient(180deg, #1e1e1e, #151515);
+            border: 3px solid #92ff1e;
+            display: flex;
+            padding: 30px;
+            color: #ffffff;
+        }
+
+        .side-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #7a7a7a;
+            margin-right: 30px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 14px;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: brown;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="team.html" class="back-btn">← Back to Team</a>
+
+    <div class="card">
+        <div class="side-text">TEAM MEMBER</div>
+
+        <div class="content">
+            <div class="avatar">
+                <img src="https://i.postimg.cc/hjbg30xh/farzana.jpg" alt="Farzana Chowdhury">
+            </div>
+
+            <div class="name">Farzana Chowdhury</div>
+
+            <div class="description">
+                Hi, I am Farzana Chowdhury, a Web Developer and creative problem solver at Food Frame.
+
+                I am passionate about developing innovative web solutions that address real-world challenges. My approach to development combines technical expertise with creative thinking to deliver unique and effective results.
+
+                I enjoy analyzing complex problems and breaking them down into manageable solutions. My attention to detail ensures that every aspect of the project is carefully considered and implemented.
+
+                As a collaborative team member, I value open communication and constructive feedback to continuously improve our work.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

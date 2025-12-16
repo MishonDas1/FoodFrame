@@ -701,6 +701,7 @@ header h1 {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
 }
 
 .mahmud-btn:hover {

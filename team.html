@@ -2,134 +2,520 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Team Members</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Amazing Team | FoodFrame</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;
- background:#f4f4f4;
- font-family:"Times New Roman",serif;
+/* ===== KEYFRAME ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.header{
- text-align:center;
- padding:30px 0;
- font-size:36px;
- font-weight:bold;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
 }
-.container{
- max-width:1100px;
- margin:auto;
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4); }
+  50% { box-shadow: 0 0 0 20px rgba(255, 107, 107, 0); }
 }
-.grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:40px;
- margin-bottom:50px;
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.center-top{
- display:flex;
- justify-content:center;
- margin-bottom:40px;
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
-.card{
- background:#fff;
- border-radius:18px;
- padding:15px;
- text-align:center;
- cursor:pointer;
- box-shadow:0 10px 25px rgba(0,0,0,.15);
- transition:.3s;
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-.card:hover{transform:translateY(-8px)}
-.card img{
- width:100%;
- height:240px;
- border-radius:16px;
- object-fit:cover;
- object-position:top;
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
-.name{
- display:block;
- margin-top:12px;
- font-size:22px;
- color:#8b0000;
- font-weight:bold;
- text-decoration:none;
- transition:color .3s ease;
+
+/* ===== BASE STYLES ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
 }
-.name:hover{
- color:#d5402b;
- text-decoration:underline;
+
+/* Floating background elements */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.08;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
 }
-.role{font-size:18px}
-.details{
- max-width:900px;
- margin:0 auto 60px;
- background:#111;
- color:#fff;
- border-radius:20px;
- padding:25px;
- display:none;
+
+body::before {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  top: -200px;
+  left: -200px;
 }
-.details h2{margin-top:0;color:#92ff1e}
+
+body::after {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #48dbfb, #ff9ff3);
+  bottom: -150px;
+  right: -150px;
+  animation-delay: 4s;
+}
+
+/* Extra floating orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #54a0ff, #5f27cd);
+  top: 50%;
+  left: 10%;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+.orb-2 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #00d2d3, #1dd1a1);
+  top: 20%;
+  right: 15%;
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #feca57 50%, #ff6b6b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 30px rgba(255, 107, 107, 0.3);
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.header-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== GRID LAYOUT ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  margin-bottom: 50px;
+}
+
+.center-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+/* ===== TEAM CARDS ===== */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(255, 255, 255, 0.2),
+              inset 0 0 60px rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Card stagger animation */
+.grid .card:nth-child(1) { animation-delay: 0.1s; }
+.grid .card:nth-child(2) { animation-delay: 0.2s; }
+.grid .card:nth-child(3) { animation-delay: 0.3s; }
+
+/* ===== LEADER CARD (Top) ===== */
+.center-top .card {
+  width: 360px;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(254, 202, 87, 0.15));
+  border: 2px solid rgba(255, 202, 87, 0.3);
+  animation: scaleIn 0.8s ease-out;
+}
+
+.center-top .card::after {
+  content: '👑';
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  font-size: 2rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+.center-top .card:hover {
+  box-shadow: 0 25px 60px rgba(255, 107, 107, 0.25),
+              0 0 40px rgba(254, 202, 87, 0.2);
+}
+
+/* ===== CARD IMAGE ===== */
+.card .img-wrapper {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease, filter 0.3s;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== CARD CONTENT ===== */
+.name {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.name::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.name:hover {
+  color: #feca57;
+}
+
+.name:hover::after {
+  width: 100%;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.role i {
+  color: #feca57;
+  font-size: 0.85rem;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover .social-links {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* ===== DETAILS PANEL ===== */
+.details {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 35px;
+  display: none;
+  animation: scaleIn 0.4s ease-out;
+}
+
+.details h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #feca57, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.details p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .center-top .card {
+    width: 100%;
+    max-width: 360px;
+  }
+  
+  .header {
+    padding: 40px 20px 30px;
+  }
+  
+  .card img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="header">Team Members</div>
+<!-- Floating Orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div class="header">
+  <div class="header-icon"></div>
+  <h1>Meet Our Team</h1>
+  <p>The talented individuals behind FoodFrame, passionate about creating amazing culinary experiences</p>
+</div>
 
 <div class="container">
 
-<!-- TOP CENTER -->
+<!-- TOP CENTER - Team Lead -->
 <div class="center-top">
- <div class="card" onclick="show('mishon')" style="width:320px">
-  <img src="https://i.postimg.cc/tg4hgrqN/mision.jpg">
+ <div class="card" onclick="show('mishon')">
+  <div class="img-wrapper">
+    <img src="https://i.postimg.cc/tg4hgrqN/mision.jpg" alt="Mishon Das Arnab">
+  </div>
   <a href="Mishon.html" class="name">Mishon Das Arnab</a>
-  <div class="role">Web Developer / UI/UX Designer</div>
+  <div class="role"><i class="fas fa-crown"></i> Team Lead / UI/UX Designer</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
  </div>
 </div>
 
 <!-- ROW 1 -->
 <div class="grid">
  <div class="card" onclick="show('azim')">
-  <img src="https://i.postimg.cc/R0gqNX3m/azim.jpg">
+  <div class="img-wrapper">
+    <img src="https://i.postimg.cc/R0gqNX3m/azim.jpg" alt="Faujul Azim">
+  </div>
   <a href="azim.html" class="name">Faujul Azim</a>
-  <div class="role">Web Developer</div>
+  <div class="role"><i class="fas fa-code"></i> Web Developer</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
  </div>
 
  <div class="card" onclick="show('sakib')">
-  <img src="https://i.postimg.cc/g2r9qsrm/jimm.jpg">
+  <div class="img-wrapper">
+    <img src="https://i.postimg.cc/g2r9qsrm/jimm.jpg" alt="Sakibul Hasan">
+  </div>
   <a href="sakib.html" class="name">Sakibul Hasan</a>
-  <div class="role">Web Developer</div>
+  <div class="role"><i class="fas fa-code"></i> Web Developer</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
  </div>
 
  <div class="card" onclick="show('shoumik')">
-  <img src="https://i.postimg.cc/VLCLBzhZ/489831175-2732799363774441-823824760185922779-n.jpg">
+  <div class="img-wrapper">
+    <img src="https://i.postimg.cc/VLCLBzhZ/489831175-2732799363774441-823824760185922779-n.jpg" alt="Mahmudul Hasan Shoumik">
+  </div>
   <a href="shoumik.html" class="name">Mahmudul Hasan Shoumik</a>
-  <div class="role">Web Developer</div>
+  <div class="role"><i class="fas fa-code"></i> Web Developer</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
  </div>
 </div>
 
 <!-- ROW 2 -->
 <div class="grid">
  <div class="card" onclick="show('jisan')">
-  <img src="https://i.postimg.cc/jdv2jRDr/image-2025-12-16-081300368.png">
+  <div class="img-wrapper">
+    <img src="https://i.postimg.cc/jdv2jRDr/image-2025-12-16-081300368.png" alt="Fahriaz Jisan">
+  </div>
   <a href="jisan.html" class="name">Fahriaz Jisan</a>
-  <div class="role">Web Developer</div>
+  <div class="role"><i class="fas fa-code"></i> Web Developer</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
  </div>
 
  <div class="card" onclick="show('farzana')">
-  <img src="https://i.postimg.cc/hjbg30xh/farzana.jpg">
+  <div class="img-wrapper">
+    <img src="https://i.postimg.cc/hjbg30xh/farzana.jpg" alt="Farzana Chowdhury">
+  </div>
   <a href="farzana.html" class="name">Farzana Chowdhury</a>
-  <div class="role">Web Developer</div>
+  <div class="role"><i class="fas fa-code"></i> Web Developer</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
  </div>
 
  <div class="card" onclick="show('lima')">
-  <img src="https://i.postimg.cc/W3sxtcFz/lima.jpg">
+  <div class="img-wrapper">
+    <img src="https://i.postimg.cc/W3sxtcFz/lima.jpg" alt="Lima Jahan">
+  </div>
   <a href="lima.html" class="name">Lima Jahan</a>
-  <div class="role">Web Developer</div>
+  <div class="role"><i class="fas fa-code"></i> Web Developer</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
  </div>
 </div>
 
@@ -138,21 +524,51 @@ body{
 </div>
 
 <script>
-const data={
- mishon:{name:"Mishon Das Arnab",text:"Lead UI/UX Designer and Web Developer with strong creative and programming background."},
- azim:{name:"Faujul Azim",text:"Web Developer focusing on clean and efficient code."},
- sakib:{name:"Sakibul Hasan",text:"Web Developer and project contributor."},
- shoumik:{name:"Mahmudul Hasan Shoumik",text:"Frontend-focused developer and team contributor."},
- jisan:{name:"Fahriaz Jisan",text:"Web Developer with interest in UI and performance."},
- farzana:{name:"Farzana Chowdhury",text:"Web Developer and creative problem solver."},
- lima:{name:"Lima Jahan",text:"Web Developer with clean design sense."}
+const data = {
+  mishon: {
+    name: "Mishon Das Arnab",
+    text: "Lead UI/UX Designer and Web Developer with a strong creative vision and deep programming expertise. Passionate about creating beautiful, user-centric digital experiences."
+  },
+  azim: {
+    name: "Faujul Azim",
+    text: "Web Developer with a focus on writing clean, efficient, and maintainable code. Always striving for excellence in every project."
+  },
+  sakib: {
+    name: "Sakibul Hasan",
+    text: "Dedicated Web Developer and valuable project contributor. Committed to delivering high-quality solutions."
+  },
+  shoumik: {
+    name: "Mahmudul Hasan Shoumik",
+    text: "Frontend-focused developer with an eye for detail. A collaborative team player who brings creative ideas to life."
+  },
+  jisan: {
+    name: "Fahriaz Jisan",
+    text: "Web Developer passionate about UI design and performance optimization. Building fast, beautiful web experiences."
+  },
+  farzana: {
+    name: "Farzana Chowdhury",
+    text: "Creative Web Developer and innovative problem solver. Turning complex challenges into elegant solutions."
+  },
+  lima: {
+    name: "Lima Jahan",
+    text: "Web Developer with a keen sense of clean design aesthetics. Creating visually appealing and functional websites."
+  }
 };
-function show(id){
- const d=document.getElementById('details');
- d.innerHTML=<h2>${data[id].name}</h2><p>${data[id].text}</p>;
- d.style.display='block';
- d.scrollIntoView({behavior:'smooth'});
+
+function show(id) {
+  const d = document.getElementById('details');
+  d.innerHTML = `<h2>✨ ${data[id].name}</h2><p>${data[id].text}</p>`;
+  d.style.display = 'block';
+  d.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
+
+// Add stagger animation on scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+  });
+});
 </script>
 
 </body>

@@ -2,115 +2,373 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lima Jahan - Food Frame</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #111;
-            font-family: "Times New Roman", serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(138, 43, 226, 0.08) 0%, transparent 40%);
+            animation: bgPulse 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 50%;
+            animation: floatUp 15s infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 14s; background: rgba(255, 107, 107, 0.6); }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 11s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 16s; background: rgba(255, 107, 107, 0.6); }
+        .particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 13s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 15s; background: rgba(255, 107, 107, 0.6); }
+        .particle:nth-child(7) { left: 70%; animation-delay: 2s; animation-duration: 12s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 4s; animation-duration: 14s; background: rgba(255, 107, 107, 0.6); }
+        .particle:nth-child(9) { left: 90%; animation-delay: 1s; animation-duration: 11s; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
         }
 
         .back-btn {
             position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background: #92ff1e;
-            color: #111;
+            top: 30px;
+            left: 30px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #ffd700, #ffb700);
+            color: #1a1a2e;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .back-btn::before {
+            content: '←';
+            font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
 
         .back-btn:hover {
-            transform: translateX(-5px);
+            transform: translateX(-8px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .card {
-            width: 760px;
-            height: 420px;
-            background: linear-gradient(180deg, #1e1e1e, #151515);
-            border: 3px solid #92ff1e;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px;
             display: flex;
-            padding: 30px;
-            color: #ffffff;
+            gap: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            z-index: 1;
+            animation: cardEntrance 1s ease-out;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent 30%);
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: translateY(50px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .side-text {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 4px;
-            color: #7a7a7a;
-            margin-right: 30px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 8px;
+            background: linear-gradient(180deg, #ffd700, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: sideTextGlow 3s ease-in-out infinite;
         }
 
-        .content {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
+        @keyframes sideTextGlow { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+
+        .content { flex: 1; display: flex; flex-direction: column; }
+
+        .avatar-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin-bottom: 25px;
+            animation: avatarFloat 4s ease-in-out infinite;
         }
+
+        @keyframes avatarFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
         .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 14px;
-            margin-bottom: 18px;
-            overflow: hidden;
-        }
-
-        .avatar img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background: linear-gradient(145deg, #1a1a2e, #1a1a2e) padding-box, linear-gradient(135deg, #ffd700, #ff6b6b) border-box;
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.3);
+            transition: all 0.4s ease;
         }
+
+        .avatar:hover { transform: scale(1.05) rotate(2deg); box-shadow: 0 25px 60px rgba(255, 215, 0, 0.4); }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .avatar:hover img { transform: scale(1.1); }
+
+        .status-badge {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            background: linear-gradient(135deg, #00c853, #00e676);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(0, 200, 83, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
         .name {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: brown;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
         }
 
+        .role {
+            font-size: 1.1rem;
+            color: #ffd700;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .role::before { content: '✨'; font-size: 1.2rem; }
+
         .description {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #e0e0e0;
-            overflow: hidden;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .description p { margin-bottom: 15px; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 107, 107, 0.2));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            color: #ffd700;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, #ffd700, #ff6b6b);
+            color: #1a1a2e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #ffd700, #ff6b6b);
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .back-btn { top: 15px; left: 15px; padding: 12px 20px; font-size: 0.85rem; }
+            .card { flex-direction: column; padding: 30px; margin-top: 60px; }
+            .side-text { writing-mode: horizontal-tb; transform: none; font-size: 1.5rem; text-align: center; margin-bottom: 20px; }
+            .content { align-items: center; text-align: center; }
+            .avatar-container { width: 140px; height: 140px; }
+            .name { font-size: 1.6rem; }
+            .role { justify-content: center; }
+            .skills { justify-content: center; }
+            .social-links { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .card { padding: 25px 20px; }
+            .name { font-size: 1.4rem; }
+            .description { font-size: 0.9rem; }
+            .avatar-container { width: 120px; height: 120px; }
         }
     </style>
 </head>
 <body>
 
-    <a href="team.html" class="back-btn">← Back to Team</a>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <a href="page.html" class="back-btn">Back to Team</a>
 
     <div class="card">
         <div class="side-text">TEAM MEMBER</div>
 
         <div class="content">
-            <div class="avatar">
-                <img src="https://i.postimg.cc/W3sxtcFz/lima.jpg" alt="Lima Jahan">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <img src="https://i.postimg.cc/zD6dt2KQ/b436b53d-5ee8-4a7f-b64b-72ca505e2be5.jpg" alt="Lima Jahan">
+                </div>
+                <span class="status-badge">✓ Active</span>
             </div>
 
             <div class="name">Lima Jahan</div>
+            <div class="role">Web Developer & Designer</div>
 
             <div class="description">
-                Hi, I am Lima Jahan, a Web Developer with a clean design sense and attention to detail.
+                <p>Hi, I am Lima Jahan, a Web Developer with a clean design sense and attention to detail.</p>
+                <p>I specialize in creating well-structured and visually harmonious web pages that provide excellent user experiences. My approach emphasizes simplicity, clarity, and elegance in design.</p>
+                <p>As a member of the Food Frame team, I contribute to building digital experiences that reflect our commitment to quality and user satisfaction.</p>
+            </div>
 
-                I specialize in creating well-structured and visually harmonious web pages that provide excellent user experiences. My approach emphasizes simplicity, clarity, and elegance in design.
+            <div class="skills">
+                <span class="skill-tag">Clean Design</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">UX Design</span>
+            </div>
 
-                I believe that good design is not just about how things look, but also how they work. I strive to create interfaces that are both beautiful and functional.
-
-                As a member of the Food Frame team, I contribute to building digital experiences that reflect our commitment to quality and user satisfaction.
+            <div class="social-links">
+                <a href="#" class="social-link">💼</a>
+                <a href="#" class="social-link">🔗</a>
+                <a href="#" class="social-link">📧</a>
             </div>
         </div>
     </div>

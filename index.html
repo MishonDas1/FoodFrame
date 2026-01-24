@@ -1,43 +1,1696 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-2537857360345047">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Concert+One&display=swap" rel="stylesheet">
-    <link rel="icon" href="New Project (1).png" type="image/png">
-    <title>Food Frame</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Primary Meta -->
+  <title>FoodFrame – Order Food Online</title>
+  <meta name="description" content="FoodFrame – Order fresh food online with fast delivery.">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FoodFrame – Order Food Online">
+  <meta property="og:description" content="Order fresh food online with fast delivery from FoodFrame.">
+  <meta property="og:image" content="https://foodframe.store/1.png">
+  <meta property="og:url" content="https://foodframe.store">
+  <meta property="og:site_name" content="FoodFrame">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FoodFrame – Order Food Online">
+  <meta name="twitter:description" content="Order fresh food online with fast delivery from FoodFrame.">
+  <meta name="twitter:image" content="https://foodframe.store/1.png">
+
+  <link rel="stylesheet" href="page.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Inter:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Premium Hero Enhancements */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245, 196, 83, 0.15) 0%, transparent 70%);
+      animation: floatSlow 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(213, 64, 43, 0.1) 0%, transparent 70%);
+      animation: floatSlow 10s ease-in-out infinite reverse;
+      pointer-events: none;
+    }
+    
+    .eyebrow {
+      animation: fadeInDown 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+    
+    .headline {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.4s;
+    }
+    
+    .copy {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.6s;
+    }
+    
+    .cta-row {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.8s;
+    }
+    
+    .socials {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 1s;
+    }
+    
+    .chef-img {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+    
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(213, 64, 43, 0.4);
+    }
+    
+    .btn-ghost:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Enhanced Product Cards */
+    .mahmud-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .mahmud-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: 0.5s;
+    }
+    
+    .mahmud-card:hover::before {
+      left: 100%;
+    }
+    
+    .mahmud-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(255, 68, 0, 0.4);
+    }
+    
+    .mahmud-card img {
+      transition: transform 0.5s ease;
+    }
+    
+    .mahmud-card:hover img {
+      transform: scale(1.1) rotate(3deg);
+    }
+    
+    .mahmud-cart-btn {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mahmud-cart-btn::after {
+      content: '🛒';
+      position: absolute;
+      right: 15px;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.3s ease;
+    }
+    
+    .mahmud-cart-btn:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .mahmud-cart-btn:hover {
+      padding-right: 45px;
+    }
+    
+    /* Feature Box Animations */
+    .f-box {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .f-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #f5c453, #ff6b6b);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .f-box:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .f-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Team Card Enhancements */
+    .sakib-card {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .sakib-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: linear-gradient(0deg, rgba(102, 126, 234, 0.8), transparent);
+      transition: height 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .sakib-card:hover::after {
+      height: 50%;
+    }
+    
+    .sakib-card:hover {
+      transform: translateY(-15px) rotateY(5deg);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sakib-card img {
+      transition: transform 0.5s ease;
+    }
+    
+    .sakib-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* Cart Dropdown Animation */
+    .cart-dropdown {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: top right;
+      transform: scale(0.95) translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .cart-dropdown.open {
+      display: flex;
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .cart-item {
+      animation: fadeInRight 0.3s ease forwards;
+    }
+    
+    /* Scroll Progress Indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #f5c453, #ff6b6b, #4ecdc4);
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+    
+    /* Enhanced Navigation */
+    header {
+      transition: all 0.3s ease;
+    }
+    
+    header.scrolled {
+      background: rgba(18, 18, 18, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .menu a {
+      position: relative;
+    }
+    
+    .menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--brand-yellow);
+      transition: width 0.3s ease;
+    }
+    
+    .menu a:hover::after {
+      width: 100%;
+    }
+    
+    /* Gallery Image Effects */
+    .gallary-grid img {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    
+    .gallary-grid img:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+      position: relative;
+    }
+    
+    /* Toast Notification Enhancement */
+    #mahmud-cart-toast {
+      animation: slideInFromBottom 0.4s ease !important;
+      border-left: 4px solid #f5c453;
+    }
+    
+    /* Loading Skeleton for Images */
+    .img-loading {
+      background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    
+    /* Floating Action Elements */
+    .floating-elements {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .floating-food {
+      position: absolute;
+      font-size: 30px;
+      opacity: 0.1;
+      animation: float 10s ease-in-out infinite;
+    }
+    
+    /* Section Title Animation */
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #f5c453, #ff6b6b);
+      border-radius: 2px;
+    }
+    
+    /* Smooth Scroll Behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Custom Selection */
+    ::selection {
+      background: rgba(245, 196, 83, 0.3);
+      color: #fff;
+    }
+    
+    /* Focus States */
+    a:focus, button:focus {
+      outline: 2px solid #f5c453;
+      outline-offset: 3px;
+    }
+    
+    /* ========================================
+       MOBILE-SPECIFIC ENHANCEMENTS
+       ======================================== */
+    
+    /* Mobile Menu Toggle Animation */
+    @media (max-width: 980px) {
+      .menu-toggle {
+        position: relative;
+        z-index: 1200;
+        background: linear-gradient(135deg, rgba(245, 196, 83, 0.15), rgba(213, 64, 43, 0.15));
+        border: 2px solid rgba(245, 196, 83, 0.4);
+        padding: 12px;
+        border-radius: 14px;
+        transition: all 0.3s ease;
+      }
+      
+      .menu-toggle:hover,
+      .menu-toggle.active {
+        background: linear-gradient(135deg, rgba(245, 196, 83, 0.25), rgba(213, 64, 43, 0.25));
+        border-color: var(--brand-yellow);
+        transform: scale(1.05);
+      }
+      
+      .menu-toggle svg {
+        transition: transform 0.3s ease;
+      }
+      
+      .menu-toggle.active svg {
+        transform: rotate(90deg);
+      }
+      
+      /* Full-screen Mobile Menu */
+      .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.99));
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        padding: 100px 24px 40px;
+        z-index: 1100;
+        flex-direction: column;
+        gap: 0;
+        overflow-y: auto;
+      }
+      
+      .menu a {
+        display: block;
+        padding: 18px 24px;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text);
+        text-align: center;
+        border-radius: 16px;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .menu a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(245, 196, 83, 0.1), transparent);
+        transition: left 0.4s ease;
+      }
+      
+      .menu a:hover::before,
+      .menu a:active::before {
+        left: 100%;
+      }
+      
+      .menu a:hover,
+      .menu a:active {
+        background: linear-gradient(135deg, rgba(245, 196, 83, 0.15), rgba(213, 64, 43, 0.15));
+        border-color: rgba(245, 196, 83, 0.3);
+        color: var(--brand-yellow);
+        transform: scale(1.02);
+      }
+      
+      .menu .login {
+        margin-top: 16px;
+        background: linear-gradient(135deg, var(--brand-red), #e63946);
+        border: none;
+        color: white;
+        padding: 18px 24px;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(213, 64, 43, 0.3);
+      }
+      
+      .menu .login:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(213, 64, 43, 0.5);
+        color: white;
+        border: none;
+      }
+      
+      /* Mobile Hero Enhancements */
+      .hero {
+        padding: 40px 0 30px;
+        min-height: auto;
+      }
+      
+      .hero-grid {
+        gap: 24px;
+      }
+      
+      .eyebrow,
+      .headline,
+      .subline,
+      .copy {
+        animation-delay: 0.1s;
+      }
+      
+      .chef-img {
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+      }
+      
+      /* FIX: CTA Buttons side by side on mobile */
+      .cta-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+      
+      .cta-row .btn {
+        flex: 0 1 auto;
+        width: auto;
+        min-width: 130px;
+        padding: 14px 20px;
+        font-size: 14px;
+      }
+      
+      /* FIX: Cart button always visible on mobile */
+      .cart-btn {
+        position: fixed !important;
+        bottom: 24px !important;
+        right: 24px !important;
+        z-index: 1200 !important;
+        background: linear-gradient(135deg, #1a1a1a, #252525) !important;
+        padding: 16px 18px !important;
+        border-radius: 50px !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 196, 83, 0.3) !important;
+        border: 2px solid rgba(245, 196, 83, 0.4) !important;
+      }
+      
+      .cart-btn svg {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      
+      /* Mobile Product Cards */
+      .mahmud-card:active {
+        transform: scale(0.98);
+      }
+      
+      .mahmud-cart-btn {
+        padding: 14px 20px;
+      }
+      
+      .mahmud-cart-btn:active {
+        transform: scale(0.96);
+        background: linear-gradient(135deg, #ff5f26 0%, #ff7b4d 100%);
+      }
+      
+      /* Cart Dropdown on mobile */
+      .cart-dropdown {
+        position: fixed !important;
+        bottom: 100px !important;
+        right: 16px !important;
+        left: 16px !important;
+        top: auto !important;
+        width: auto !important;
+        max-height: 60vh !important;
+        z-index: 9997 !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .menu {
+        padding: 90px 16px 30px;
+      }
+      
+      .menu a {
+        padding: 16px 20px;
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      
+      .menu .login {
+        padding: 16px 20px;
+        font-size: 16px;
+      }
+      
+      .hero {
+        padding: 30px 0 20px;
+      }
+      
+      .chef-img {
+        max-width: 280px;
+      }
+      
+      /* CTA buttons stack on very small screens */
+      .cta-row .btn {
+        min-width: 120px;
+        padding: 12px 16px;
+        font-size: 13px;
+      }
+      
+      /* Touch feedback */
+      .btn:active {
+        transform: scale(0.96);
+      }
+      
+      .social:active {
+        transform: scale(0.9);
+      }
+    }
+    
+    /* Landscape Mobile */
+    @media (max-width: 900px) and (orientation: landscape) {
+      .menu {
+        padding: 80px 40px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .menu a {
+        flex: 0 1 auto;
+        padding: 12px 20px;
+        font-size: 14px;
+        margin: 4px;
+      }
+      
+      .menu .login {
+        margin-top: 0;
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+    }
+    
+    /* iOS Safe Area Support */
+    @supports (padding: max(0px)) {
+      @media (max-width: 980px) {
+        .menu {
+          padding-bottom: max(40px, env(safe-area-inset-bottom));
+        }
+        
+        .cart-btn {
+          right: max(20px, env(safe-area-inset-right));
+          bottom: max(20px, env(safe-area-inset-bottom));
+        }
+        
+        .cart-dropdown {
+          left: max(16px, env(safe-area-inset-left));
+          right: max(16px, env(safe-area-inset-right));
+          bottom: max(90px, calc(env(safe-area-inset-bottom) + 70px));
+        }
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="click-me">
-        <button class="btn">CLICK ME </button>
-       
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img class="brand-logo" src="Orange Modern Icon Food Logo.png" alt="Food Frame logo" />
+        <div class="brand-name">Food Frame</div>
+      </div>
+      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M3 6h18v2H3z
+             M3 11h18v2H3z
+             M3 16h18v2H3z"/>
+  </svg>
+      </button>
+
+      <nav id="primary-menu" class="menu">
+        <a href="#">Home</a>
+        <a href="#About44">About</a>
+        <a href="#best-selling-products">Menu</a>
+        <a href="#Team">Team Member</a>
+        <a href="#gallary">Gallery</a>
+        <a class="login" href="login.html">Log‑In</a>
+      </nav>
+      
+      <!-- Cart Button - Outside menu for mobile visibility -->
+      <button class="cart-btn" id="cart-toggle" type="button" aria-label="View Cart">
+       <svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 500 500" xml:space="preserve">
+<path d="M143.2,336.9c-8,0-15.2-5.6-16.8-13.6L87.2,140.9c-2.4-9.6,4-18.4,13.6-20.8s18.4,4,20.8,13.6l39.2,182.4
+	c1.6,9.6-4,18.4-13.6,20.8C145.6,336.9,144.8,336.9,143.2,336.9z"/>
+<path d="M278.4,336.9c-1.6,0-2.4,0-4,0c-9.6-2.4-15.2-11.2-13.6-20.8L300,132.9c2.4-9.6,11.2-15.2,20.8-13.6
+	c9.6,2.4,15.2,11.2,13.6,20.8l-39.2,182.4C293.6,331.3,286.4,336.9,278.4,336.9z"/>
+<path d="M212,333.7c-9.6,0-16-8-16-17.6V133.7c0-9.6,6.4-17.6,16-17.6s16,8,16,17.6v182.4C228,325.7,221.6,333.7,212,333.7z"/>
+<path style="fill:#18456D;" d="M420.8,138.5c1.6-5.6,0.8-12-2.4-16c-3.2-4.8-8.8-8-14.4-8H17.6c-5.6,0-10.4,3.2-14.4,8
+	c-3.2,4.8-4,10.4-2.4,16L60,327.3c2.4,7.2,8.8,11.2,16.8,11.2h268c8,0,14.4-3.2,16.8-11.2L420.8,138.5z M61.6,218.5H360l-9.6,32
+	H71.2L61.6,218.5z M380.8,154.5l-9.6,24H50.4l-9.6-24H380.8z M89.6,306.5l-7.2-24H340l-8,24H89.6z"/>
+<g>
+	<path style="fill:#0B3249;" d="M404,122.5H17.6c-5.6,0-10.4,3.2-14.4,8c-1.6,1.6-2.4,4.8-3.2,6.4c0,0,0,0.8,0,1.6l60,188.8
+		c2.4,7.2,8.8,11.2,16.8,11.2h268c8,0,14.4-3.2,16.8-11.2l59.2-188.8c0-0.8,0-0.8,0-0.8c-0.8-2.4-1.6-4.8-3.2-7.2
+		C415.2,125.7,409.6,122.5,404,122.5z M340,290.5l-8,24H89.6l-7.2-24h2.4l-2.4-8H340l-2.4,8H340z M360,226.5l-9.6,32H71.2l-9.6-32
+		H64l-2.4-8H360l-2.4,8H360z M380.8,162.5l-9.6,24H50.4l-9.6-24h2.4l-2.4-8h340l-2.4,8H380.8z"/>
+	<path style="fill:#0B3249;" d="M354.4,402.5H67.2c-9.6,0-17.6-6.4-17.6-16s8-16,17.6-16h287.2c9.6,0,17.6,6.4,17.6,16
+		C372,396.1,364,402.5,354.4,402.5z"/>
+</g>
+<path d="M81.6,402.5h113.6c0-16-16-24-34.4-32H99.2C88.8,378.5,81.6,386.5,81.6,402.5z"/>
+<path style="fill:#0E3451;" d="M168.8,403.3c0,24-19.2,46.4-43.2,46.4s-43.2-22.4-43.2-46.4s19.2-43.2,43.2-43.2
+	C149.6,360.1,168.8,379.3,168.8,403.3z"/>
+<path style="fill:#2689C6;" d="M168.8,403.3c0,24-19.2,43.2-43.2,43.2s-43.2-19.2-43.2-43.2s19.2-47.2,43.2-47.2
+	C149.6,356.9,168.8,379.3,168.8,403.3z"/>
+<circle style="fill:#1B5A89;" cx="125.6" cy="403.3" r="43.2"/>
+<path style="fill:#18456D;" d="M94.4,372.9c16.8-16.8,44.8-16.8,61.6,0s16.8,44.8,0,61.6"/>
+<path style="fill:#0B3249;" d="M125.6,429.7c-14.4,0-25.6-11.2-25.6-25.6s11.2-25.6,25.6-25.6s25.6,11.2,25.6,25.6
+	C151.2,417.7,139.2,429.7,125.6,429.7z"/>
+<path d="M143.2,385.7c10.4,10.4,10.4,26.4,0,36.8s-26.4,10.4-36.8,0"/>
+<path d="M242.4,402.5H356c0-16-16-24-34.4-32H260C249.6,378.5,242.4,386.5,242.4,402.5z"/>
+<path style="fill:#0E3451;" d="M329.6,403.3c0,24-19.2,46.4-43.2,46.4s-43.2-22.4-43.2-46.4s19.2-43.2,43.2-43.2
+	C309.6,360.1,329.6,379.3,329.6,403.3z"/>
+<path style="fill:#2689C6;" d="M329.6,403.3c0,24-19.2,43.2-43.2,43.2s-43.2-19.2-43.2-43.2s19.2-47.2,43.2-47.2
+	C309.6,356.9,329.6,379.3,329.6,403.3z"/>
+<circle style="fill:#1B5A89;" cx="285.6" cy="403.3" r="43.2"/>
+<path style="fill:#18456D;" d="M255.2,372.9c16.8-16.8,44.8-16.8,61.6,0c16.8,16.8,16.8,44.8,0,61.6"/>
+<path style="fill:#0B3249;" d="M285.6,429.7c-14.4,0-25.6-11.2-25.6-25.6s11.2-25.6,25.6-25.6s25.6,11.2,25.6,25.6
+	C312,417.7,300,429.7,285.6,429.7z"/>
+<path d="M304,385.7c10.4,10.4,10.4,26.4,0,36.8s-26.4,10.4-36.8,0"/>
+<path style="fill:#1B5A89;" d="M500,74.5c0,8.8-7.2,16-16,16h-72c-8.8,0-16-7.2-16-16l0,0c0-8.8,7.2-16,16-16h72
+	C492.8,58.5,500,65.7,500,74.5L500,74.5z"/>
+<path style="fill:#18456D;" d="M413.6,58.5c-8,0-14.4,4.8-16.8,12c2.4,7.2,8.8,12,16.8,12h69.6c8,0,13.6-4.8,16-12
+	c-0.8-7.2-7.2-12-15.2-12H413.6z"/>
+<path style="fill:#F96294;" d="M445.6,187.3L404,145.7l41.6-41.6c6.4-6.4,8.8-14.4,8.8-22.4s-3.2-16-8.8-22.4c-12-12-32-12-44,0
+	L360,100.9l-41.6-41.6c-12-12-32-12-44,0s-12,32,0,44l41.6,41.6l-41.6,41.6c-12,12-12,32,0,44s32,12,44,0l41.6-41.6l41.6,41.6
+	c6.4,6.4,14.4,8.8,22.4,8.8s16-3.2,22.4-8.8C457.6,219.3,457.6,200.1,445.6,187.3z"/>
+<g>
+	<path style="fill:#FF0D52;" d="M270.4,64.1c-3.2,4.8-4.8,9.6-5.6,14.4L270.4,64.1z"/>
+	<path style="fill:#FF0D52;" d="M455.2,81.7c0-8-3.2-16-8.8-22.4c-4.8-4.8-11.2-8-17.6-8.8l-55.2,152.8l28,28
+		c6.4,6.4,14.4,8.8,22.4,8.8s16-3.2,22.4-8.8c12-12,12-32,0-44L404,145.7l41.6-41.6C452,97.7,455.2,89.7,455.2,81.7z"/>
+	<path style="fill:#FF0D52;" d="M276,233.7c5.6,4.8,12.8,7.2,20,7.2L276,233.7z"/>
+</g>
+</svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+
+      <!-- Cart Dropdown -->
+      <div class="cart-dropdown" id="cart-dropdown">
+        <div class="cart-header">
+          <h3>Your Product</h3>
+          <button class="cart-close" id="cart-close" type="button" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+          <p class="cart-empty">No Product in this🫣</p>
+        </div>
+        <div class="cart-footer" id="cart-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">৳0</span>
+          </div>
+          <button class="cart-checkout-btn" type="button">Checkout</button>
+          <button class="cart-clear-btn" id="cart-clear" type="button">Clear Cart</button>
+        </div>
+      </div>
     </div>
-    <p style="font-family: sans-serif; font-size: 20px;" id="thanks">Thanks Sebika Ma’am for inspiration</p>
-    
-    <div class="intro">
-        <h1  class="hello">Hello Sir</h1>
-        <h1  class="ready">Food Frame</h1>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-grid">
+      <section>
+        <div class="eyebrow">Food Frame</div>
+        <h4 class="headline">Make your day special <br> with our delicious meals!</h4>
+        <p class="copy">Welcome to Food Frame — where every flavor paints a story and every meal feels like art.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="contact.html">Contact US</a>
+          <a class="btn btn-ghost" href="#best-selling-products">All Food</a>
         </div>
 
-        <div class="content">
-        <div>
-            <h1  class="site-name">Get Ready For!! </h1>
+        <div class="socials">
+          <a class="social" href="https://www.facebook.com/foodframeTeam">
+            <svg viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.87 6.48 1.87 12.07c0 4.99 3.64 9.13 8.4 9.93v-7.02H7.9v-2.91h2.37V9.41c0-2.35 1.4-3.65 3.54-3.65 1.03 0 2.11.18 2.11.18v2.33h-1.19c-1.18 0-1.55.73-1.55 1.48v1.78h2.64l-.42 2.91h-2.22V22c4.76-.8 8.4-4.94 8.4-9.93z"/></svg>
+          </a>
+          <a class="social" href="#">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-3.09a15.9 15.9 0 0 0-1.2-3.33A8.03 8.03 0 0 1 18.93 8zM12 4c.78 0 1.88 1.42 2.58 4H9.42C10.12 5.42 11.22 4 12 4zM4.07 8a8.03 8.03 0 0 1 4.29-3.33A15.9 15.9 0 0 0 7.16 8H4.07zM4 12c0-.68.05-1.35.16-2h3.33a22.4 22.4 0 0 0 0 4H4.16c-.11-.65-.16-1.32-.16-2zm.07 4h3.09c.22 1.15.62 2.29 1.2 3.33A8.03 8.03 0 0 1 4.07 16zM12 20c-.78 0-1.88-1.42-2.58-4h5.16C13.88 18.58 12.78 20 12 20zm3.78-2.67c.58-1.04.98-2.18 1.2-3.33h3.09a8.03 8.03 0 0 1-4.29 3.33zM16.51 12c-.09 1.36-.39 2.68-.87 3.87H8.36A17.7 17.7 0 0 1 7.49 12c.09-1.36.39-2.68.87-3.87h7.28c.48 1.19.78 2.51.87 3.87z"/></svg>
+          </a>
         </div>
-        <div class="comming-soon">
-               <h1>COMING SOON !!</h1>
-        </div>
-     
+      </section>
+
+      <section class="hero-art">
+        <img class="chef-img" src="New Project (1) 1 (1).png" alt="Chef Image" />
+      </section>
+    </div>
+  </main>
+
+
+
+<!-- Azim Section -->
+<section class="light-section">
+  <div class="container">
+
+    <div class="features-row">
+
+      <div class="f-box">
+        
+        <h3>Master Chefs</h3>
+        <p>Our expert chefs craft every dish with passion, perfection, and authentic Bangladeshi flavors.</p>
+      </div>
+
+      <div class="f-box">
+        <h3>Quality Food</h3>
+        <p>We use the freshest ingredients and traditional recipes to ensure every bite is full of taste and care.</p>
+      </div>
+
+      <div class="f-box">
+        <h3>Satisfaction</h3>
+        <p>Your smile is our success! We’re dedicated to giving you the best dining experience possible.</p>
+      </div>
+
+      <div class="f-box">
+        <h3>Environment</h3>
+        <p>Enjoy your meal in a warm and welcoming atmosphere made for comfort and conversation.</p>
+      </div>
+
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <div class="about-row">
+
+      <div class="about-text">
+        <h2 style="color: white;">About Us</h2>
+        <div class="divider"></div>
+
+        <p>
+          Welcome to <strong>Food Frame Restaurant</strong>, where flavor meets creativity!
+          Founded in 2025, Food Frame started with a simple idea —
+          bringing the warmth of Bangladeshi cuisine into a modern dining experience.
+        </p>
+      </div>
+
+      <div class="about-img">
+        <img src="rr.png" alt="Delivery scooter">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- End Azim Section -->
+
+  <!-- Mahmud Section -->
+  <section class="mahmud-products-section" aria-labelledby="best-selling-products" id="best-selling-products">
+    <div class="mahmud-shell">
+      <div class="mahmud-header">
+        <h2 id="best-selling-products">Best Selling Products</h2>
+      </div>
+
+      <div class="mahmud-grid">
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/6pbPh7cQ/3.png" alt="Chicken Biryani" />
+          <h3>Chicken Biryani</h3>
+          <p class="mahmud-price">৳280</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/nVTGmy0s/4.png" alt="Kacchi King Platter" />
+          <h3>Kacchi King Platter</h3>
+          <p class="mahmud-price"><span class="mahmud-old">৳380</span> ৳350</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/d3WRKCLb/5.png" alt="Bhuna Khichuri" />
+          <h3>Bhuna Khichuri</h3>
+          <p class="mahmud-price"><span class="mahmud-old">৳410</span> ৳380</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/D0CQKG8Y/6.png" alt="Special Pizza" />
+          <h3>Special Pizza</h3>
+          <p class="mahmud-price">৳450</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/ZnfPhNCv/7.png" alt="Fiery Chicken Burger" />
+          <h3>Fiery Chicken Burger</h3>
+          <p class="mahmud-price"><span class="mahmud-old">৳300</span> ৳260</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/Wz9mPZhG/8.png" alt="Iced Lemon Mint" />
+          <h3>Iced Lemon Mint</h3>
+          <p class="mahmud-price">৳140</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/cC17jh43/9.png" alt="Mango Magic Shake" />
+          <h3>Mango Magic Shake</h3>
+          <p class="mahmud-price">৳145</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+
+        <article class="mahmud-card">
+          <img src="https://i.postimg.cc/Y02NVRq1/10.png" alt="Food Frame Special Platter" />
+          <h3>Food Frame Special Platter</h3>
+          <p class="mahmud-price">৳420</p>
+          <button class="mahmud-cart-btn" type="button">Add to Cart</button>
+        </article>
+      </div>
+
+      <div class="mahmud-btn-row">
+        <button class="mahmud-btn" type="button">VIEW ALL</button>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Mahmud Section -->
+
+<!-- Farzana lima-->
+
+    <section id="About44" class="about-section">
+        <div class="about-container">
+
+            <div class="about-img">
+                <img src="https://i.postimg.cc/X7yfSkGL/(11).png" alt="Chef Image">
+            </div>
+
+            <div class="about-text">
+                <h2 class="about-title">Our Story</h2>
+                <h3 class="about-subtitle">The Taste Behind Food Frame</h3>
+
+                <p>
+                    In the heart of Dhaka, 2025 marked the beginning of a flavorful journey called 
+                    <strong>Food Frame Restaurant</strong> — a dream born from love for food and the passion
+                    to bring people together through taste.
+                </p>
+
+                <p>
+                    It all started with a simple idea:<br>
+                    <em>"Every meal deserves a perfect frame."</em>
+                </p>
+
+                <p>
+                    Our founders wanted to create more than just a restaurant — they wanted to build a place
+                    where Bangladeshi tradition meets modern taste, where every dish is crafted like a piece
+                    of art.
+                </p>
+
+                <p>
+                    From the aromatic Kacchi Biryani to the sizzling Fiery Chicken Burger, every plate carries
+                    a story — a story of home, spice, and happiness.
+                </p>
+
+                <p>
+                    Food Frame isn’t just about eating; it’s about experiencing food. Whether it’s the laughter
+                    of friends over crispy fuchka, a family dinner with kala bhuna, or a quiet moment with iced
+                    lemon mint — every moment becomes a memory.
+                </p>
+
+                <p>
+                    Today, Food Frame stands proudly as a symbol of taste, quality, and creativity — serving
+                    flavors that define Bangladesh.  
+                    <strong>Food Frame Restaurant — Every flavor tells a story.</strong>
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Farzana lima-->
+
+    <div class="gallary" id="gallary">
+      <h2 class="gallary-title">Gallery</h2>
+      <div class="gallary-grid">
+        <img src="1.png" alt="">
+        <img src="2.png" alt="">
+        <img src="3.png" alt="">
+        <img src="4.png" alt="">
+        <img src="5.png" alt="">
+        <img src="6.png" alt="">
+        <img src="7.png" alt="">
+        <img src="8.png" alt="">
+        <img src ="9.png" alt="">
+        
+        
+      </div>
+    </div>
+ <div class="mahmud-btn-row">
+  <a href="video.html" class="mahmud-btn">View Our Video Gallery</a>
+</div>
+
   
-    <script src="./index.js" type="text/javascript"></script>
+
+<!-- Team Members Section -->
+<section id="Team" class="sakib-team-section">
+<style>
+.sakib-team-section {
+  background: #f4f4f4;
+  padding: 60px 0;
+  font-family: "Times New Roman", serif;
+}
+.sakib-team-section .sakib-header {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 36px;
+  font-weight: bold;
+  color: #121212;
+}
+.sakib-team-section .sakib-container {
+  max-width: 1100px;
+  margin: auto;
+}
+.sakib-team-section .sakib-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.sakib-team-section .sakib-center-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.sakib-team-section .sakib-card-link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  cursor: pointer;
+}
+.sakib-team-section .sakib-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  transition: .3s;
+}
+.sakib-team-section .sakib-card-link:hover .sakib-card {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+.sakib-team-section .sakib-card img {
+  width: 100%;
+  height: 240px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: top;
+}
+.sakib-team-section .sakib-name {
+  display: block;
+  margin-top: 12px;
+  font-size: 22px;
+  color: #8b0000;
+  font-weight: bold;
+  transition: all .3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.sakib-team-section .sakib-card-link:hover .sakib-name {
+  color: #fff;
+  background: linear-gradient(135deg, #d5402b, #ff6b6b);
+  transform: scale(1.02);
+}
+.sakib-team-section .sakib-role {
+  font-size: 18px;
+  color: #333;
+  margin-top: 5px;
+}
+.sakib-team-section .sakib-details {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  background: #111;
+  color: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  display: none;
+}
+.sakib-team-section .sakib-details h2 {
+  margin-top: 0;
+  color: #92ff1e;
+}
+@media (max-width: 768px) {
+  .sakib-team-section .sakib-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sakib-team-section .sakib-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+</style>
+
+<div class="sakib-header">Team Members</div>
+
+<div class="sakib-container">
+
+<!-- TOP CENTER -->
+<div class="sakib-center-top">
+ <a href="Mishon.html" class="sakib-card-link" style="width:320px">
+  <div class="sakib-card" style="width:100%">
+   <img src="22.png" alt="Mishon Das Arnab">
+   <div class="sakib-name">Mishon Das Arnab</div>
+   <div class="sakib-role">Web Developer / UI/UX Designer</div>
+  </div>
+ </a>
+</div>
+
+<!-- ROW 1 -->
+<div class="sakib-grid">
+ <a href="azim.html" class="sakib-card-link">
+  <div class="sakib-card">
+   <img src="https://i.postimg.cc/R0gqNX3m/azim.jpg" alt="Faujul Azim">
+   <div class="sakib-name">Faujul Azim</div>
+   <div class="sakib-role">Web Developer</div>
+  </div>
+ </a>
+
+ <a href="sakib.html" class="sakib-card-link">
+  <div class="sakib-card">
+   <img src="https://i.postimg.cc/g2r9qsrm/jimm.jpg" alt="Sakibul Hasan">
+   <div class="sakib-name">Sakibul Hasan</div>
+   <div class="sakib-role">Web Developer</div>
+  </div>
+ </a>
+
+ <a href="shoumik.html" class="sakib-card-link">
+  <div class="sakib-card">
+   <img src="https://i.postimg.cc/VLCLBzhZ/489831175-2732799363774441-823824760185922779-n.jpg" alt="Mahmudul Hasan Shoumik">
+   <div class="sakib-name">Mahmudul Hasan Shoumik</div>
+   <div class="sakib-role">Web Developer</div>
+  </div>
+ </a>
+</div>
+
+<!-- ROW 2 -->
+<div class="sakib-grid">
+ <a href="jisan.html" class="sakib-card-link">
+  <div class="sakib-card">
+   <img src="https://i.postimg.cc/jdv2jRDr/image-2025-12-16-081300368.png" alt="Fahriaz Jisan">
+   <div class="sakib-name">Fahriaz Jisan</div>
+   <div class="sakib-role">Web Developer</div>
+  </div>
+ </a>
+
+ <a href="farzana.html" class="sakib-card-link">
+  <div class="sakib-card">
+   <img src="https://i.postimg.cc/hjbg30xh/farzana.jpg" alt="Farzana Chowdhury">
+   <div class="sakib-name">Farzana Chowdhury</div>
+   <div class="sakib-role">Web Developer</div>
+  </div>
+ </a>
+
+ <a href="lima.html" class="sakib-card-link">
+  <div class="sakib-card">
+   <img src="https://i.postimg.cc/zD6dt2KQ/b436b53d-5ee8-4a7f-b64b-72ca505e2be5.jpg" alt="Lima Jahan">
+   <div class="sakib-name">Lima Jahan</div>
+   <div class="sakib-role">Web Developer</div>
+  </div>
+ </a>
+</div>
+
+<div id="sakib-details" class="sakib-details"></div>
+
+</div>
+
+<script>
+const teamData = {
+ mishon: {name: "Mishon Das Arnab", text: "Lead UI/UX Designer and Web Developer with strong creative and programming background."},
+ azim: {name: "Faujul Azim", text: "Web Developer focusing on clean and efficient code."},
+ sakib: {name: "Sakibul Hasan", text: "Web Developer and project contributor."},
+ shoumik: {name: "Mahmudul Hasan Shoumik", text: "Frontend-focused developer and team contributor."},
+ jisan: {name: "Fahriaz Jisan", text: "Web Developer with interest in UI and performance."},
+ farzana: {name: "Farzana Chowdhury", text: "Web Developer and creative problem solver."},
+ lima: {name: "Lima Jahan", text: "Web Developer with clean design sense."}
+};
+function showTeamMember(id) {
+ const d = document.getElementById('sakib-details');
+ d.innerHTML = '<h2>' + teamData[id].name + '</h2><p>' + teamData[id].text + '</p>';
+ d.style.display = 'block';
+ d.scrollIntoView({behavior: 'smooth'});
+}
+</script>
+</section>
+<!-- End Team Members Section -->
+
+    
+<br>
+    <a style="text-align: center; display: block; margin: 20px 0;color: white;text-decoration: none; font-size: 30px;" href="Contact.html" target="contentFrame">Contact Us</a>
+   
+
+
+
+<iframe name="contentFrame" src="contact.html" width="100%" height="600" style="border:none;"></iframe>
+
+<!-- Footer -->
+<footer class="foodframe-footer">
+  <style>
+    .foodframe-footer {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a202c 100%);
+      color: white;
+      padding: 80px 20px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .foodframe-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #f5c453, #ff6b6b, #4ecdc4, #667eea, #f5c453);
+      background-size: 200% 100%;
+      animation: gradientFlow 3s linear infinite;
+    }
+    
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    
+    .footer-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    
+    .footer-particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(245, 196, 83, 0.3);
+      border-radius: 50%;
+      animation: floatParticle 8s ease-in-out infinite;
+    }
+    
+    .footer-particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .footer-particle:nth-child(2) { left: 20%; top: 60%; animation-delay: 1s; background: rgba(255, 107, 107, 0.3); }
+    .footer-particle:nth-child(3) { left: 40%; top: 30%; animation-delay: 2s; background: rgba(78, 205, 196, 0.3); }
+    .footer-particle:nth-child(4) { left: 60%; top: 70%; animation-delay: 3s; }
+    .footer-particle:nth-child(5) { left: 80%; top: 40%; animation-delay: 4s; background: rgba(102, 126, 234, 0.3); }
+    .footer-particle:nth-child(6) { left: 90%; top: 80%; animation-delay: 5s; background: rgba(255, 107, 107, 0.3); }
+    
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-30px) scale(1.5); opacity: 0.8; }
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .footer-brand {
+      margin-bottom: 24px;
+    }
+    
+    .footer-logo {
+      font-size: 42px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    
+    .footer-logo-icon {
+      font-size: 50px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .footer-logo-text {
+      background: linear-gradient(135deg, #f5c453, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .footer-tagline {
+      color: #8b949e;
+      font-size: 17px;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+    
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .footer-nav-link {
+      color: #c9d1d9;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .footer-nav-link:hover {
+      background: rgba(245, 196, 83, 0.15);
+      border-color: rgba(245, 196, 83, 0.4);
+      color: #f5c453;
+      transform: translateY(-2px);
+    }
+    
+    .footer-nav-link.highlight {
+      background: linear-gradient(135deg, rgba(245, 196, 83, 0.2), rgba(255, 107, 107, 0.2));
+      border-color: rgba(245, 196, 83, 0.3);
+      color: #f5c453;
+    }
+    
+    .footer-nav-link.admin {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+      border-color: rgba(102, 126, 234, 0.3);
+      color: #667eea;
+    }
+    
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+    
+    .footer-social {
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer-social::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--social-color);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 50%;
+    }
+    
+    .footer-social:hover::before {
+      opacity: 1;
+    }
+    
+    .footer-social:hover {
+      transform: translateY(-5px) scale(1.1);
+      border-color: transparent;
+      box-shadow: 0 10px 30px var(--social-shadow);
+    }
+    
+    .footer-social svg {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .footer-social.facebook { --social-color: #1877f2; --social-shadow: rgba(24, 119, 242, 0.4); }
+    .footer-social.instagram { --social-color: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); --social-shadow: rgba(225, 48, 108, 0.4); }
+    .footer-social.twitter { --social-color: #1da1f2; --social-shadow: rgba(29, 161, 242, 0.4); }
+    
+    .footer-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      margin-bottom: 30px;
+    }
+    
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .footer-copyright {
+      color: #6e7681;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .footer-heart {
+      color: #ff6b6b;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.15); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.1); }
+    }
+    
+    .footer-year {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 12px;
+      background: linear-gradient(135deg, rgba(245, 196, 83, 0.15), rgba(255, 107, 107, 0.15));
+      border-radius: 20px;
+      font-weight: 600;
+      color: #f5c453;
+    }
+    
+    .footer-country {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .footer-flag {
+      font-size: 18px;
+    }
+    
+    @media (max-width: 768px) {
+      .foodframe-footer {
+        padding: 60px 16px 30px;
+      }
+      
+      .footer-logo {
+        font-size: 32px;
+      }
+      
+      .footer-logo-icon {
+        font-size: 40px;
+      }
+      
+      .footer-tagline {
+        font-size: 15px;
+      }
+      
+      .footer-nav {
+        gap: 8px;
+      }
+      
+      .footer-nav-link {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+      
+      .footer-social {
+        width: 46px;
+        height: 46px;
+      }
+      
+      .footer-copyright {
+        font-size: 13px;
+      }
+    }
+  </style>
+  
+  <!-- Floating Particles -->
+  <div class="footer-particles">
+    <div class="footer-particle"></div>
+    <div class="footer-particle"></div>
+    <div class="footer-particle"></div>
+    <div class="footer-particle"></div>
+    <div class="footer-particle"></div>
+    <div class="footer-particle"></div>
+  </div>
+  
+  <div class="footer-content">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="footer-logo-icon">🍽️</span>
+        <span class="footer-logo-text">FoodFrame</span>
+      </div>
+      <p class="footer-tagline">✨ Delicious food, crafted with passion, delivered with love ✨</p>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="footer-nav">
+      <a href="page.html" class="footer-nav-link">🏠 Home</a>
+      <a href="#best-selling-products" class="footer-nav-link">🍕 Menu</a>
+      <a href="#Team" class="footer-nav-link">👥 Team</a>
+      <a href="#gallary" class="footer-nav-link">📸 Gallery</a>
+      <a href="contact.html" class="footer-nav-link">📞 Contact</a>
+      <a href="login.html" class="footer-nav-link highlight">🔐 Login</a>
+      <a href="admin_login.php" class="footer-nav-link admin">⚙️ Admin</a>
+    </nav>
+    
+    <!-- Social Links -->
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/foodframeTeam" class="footer-social facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.87 6.48 1.87 12.07c0 4.99 3.64 9.13 8.4 9.93v-7.02H7.9v-2.91h2.37V9.41c0-2.35 1.4-3.65 3.54-3.65 1.03 0 2.11.18 2.11.18v2.33h-1.19c-1.18 0-1.55.73-1.55 1.48v1.78h2.64l-.42 2.91h-2.22V22c4.76-.8 8.4-4.94 8.4-9.93z"/></svg>
+      </a>
+      <a href="#" class="footer-social instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="#" class="footer-social twitter">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+      </a>
+    </div>
+    
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+    
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        <span class="footer-year">© 2025</span>
+        <span>FoodFrame. All rights reserved.</span>
+        <span>Made with <span class="footer-heart">❤️</span> in</span>
+        <span class="footer-country"><span class="footer-flag">🇧🇩</span> Bangladesh</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Progress Indicator -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" style="position: fixed; bottom: 80px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #f5c453, #ff6b6b); border: none; color: white; font-size: 20px; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.4s ease; box-shadow: 0 5px 20px rgba(245, 196, 83, 0.4); z-index: 1000;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <script src="cart.js"></script>
+  <script>
+    (function () {
+      // Mobile Menu Toggle
+      var toggle = document.querySelector('.menu-toggle');
+      var menu = document.getElementById('primary-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function () {
+        var isOpen = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+
+    // Scroll Progress & Effects
+    (function() {
+      var progressBar = document.getElementById('scroll-progress');
+      var backToTop = document.getElementById('back-to-top');
+      var header = document.querySelector('header');
+      
+      window.addEventListener('scroll', function() {
+        // Progress bar
+        var scrollTop = window.pageYOffset;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPercent = (scrollTop / docHeight) * 100;
+        if (progressBar) {
+          progressBar.style.width = scrollPercent + '%';
+        }
+        
+        // Back to top button
+        if (backToTop) {
+          if (scrollTop > 500) {
+            backToTop.style.opacity = '1';
+            backToTop.style.visibility = 'visible';
+          } else {
+            backToTop.style.opacity = '0';
+            backToTop.style.visibility = 'hidden';
+          }
+        }
+        
+        // Header scroll effect
+        if (header) {
+          if (scrollTop > 100) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+      });
+    })();
+
+    // Scroll Reveal Animation
+    (function() {
+      var reveals = document.querySelectorAll('.f-box, .mahmud-card, .sakib-card, .about-row, .gallary-grid img');
+      
+      function revealOnScroll() {
+        reveals.forEach(function(el, index) {
+          var windowHeight = window.innerHeight;
+          var elementTop = el.getBoundingClientRect().top;
+          var revealPoint = 150;
+          
+          if (elementTop < windowHeight - revealPoint) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }
+        });
+      }
+      
+      // Initial state
+      reveals.forEach(function(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+      
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll(); // Initial check
+    })();
+
+    // Smooth Hover Effect for Cards
+    document.querySelectorAll('.mahmud-card').forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
+        var rotateX = (y - centerY) / 20;
+        var rotateY = (centerX - x) / 20;
+        
+        card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-10px)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+      });
+    });
+
+    // Add click ripple effect to buttons
+    document.querySelectorAll('.btn, .mahmud-cart-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        ripple.style.cssText = 'position: absolute; background: rgba(255,255,255,0.3); border-radius: 50%; transform: scale(0); animation: ripple 0.6s linear; pointer-events: none;';
+        ripple.style.left = (e.clientX - rect.left) + 'px';
+        ripple.style.top = (e.clientY - rect.top) + 'px';
+        ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+        ripple.style.marginLeft = ripple.style.marginTop = '-' + (Math.max(rect.width, rect.height) / 2) + 'px';
+        btn.style.position = 'relative';
+        btn.style.overflow = 'hidden';
+        btn.appendChild(ripple);
+        setTimeout(function() { ripple.remove(); }, 600);
+      });
+    });
+
+    // Counter Animation for Stats
+    function animateValue(element, start, end, duration) {
+      var startTimestamp = null;
+      var step = function(timestamp) {
+        if (!startTimestamp) startTimestamp = timestamp;
+        var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.textContent = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+  </script>
 </body>
 </html>

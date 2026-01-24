@@ -3,31 +3,327 @@
 <head> 
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>Log-in </title> 
-<link rel="stylesheet" type="text/css" href="project1.css"> 
+<title>Log-in - FoodFrame</title> 
+<link rel="stylesheet" type="text/css" href="project1.css">
+<style>
+    /* Enhanced Login Animations */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes glow {
+        0%, 100% {
+            box-shadow: 0 0 20px rgba(245, 196, 83, 0.2);
+        }
+        50% {
+            box-shadow: 0 0 40px rgba(245, 196, 83, 0.4);
+        }
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    .login-container {
+        animation: slideIn 0.6s ease;
+    }
+    
+    .login-title {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .login-title::after {
+        content: '🍽️';
+        position: absolute;
+        top: -20px;
+        right: -40px;
+        font-size: 28px;
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    .form-input {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    .form-input:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25) !important;
+    }
+    
+    .login-button {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    .login-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease, height 0.6s ease;
+    }
+    
+    .login-button:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .login-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    }
+    
+    .login-button:active {
+        transform: translateY(-2px);
+    }
+    
+    .links-container {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .links-container a {
+        display: block;
+        padding: 12px 20px;
+        margin: 10px 0;
+        background: rgba(102, 126, 234, 0.1);
+        border-radius: 12px;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+    
+    .links-container a:hover {
+        background: rgba(102, 126, 234, 0.2);
+        transform: translateX(5px);
+    }
+    
+    .links-container a.forgot-link {
+        background: transparent;
+        color: #718096;
+        font-size: 14px;
+    }
+    
+    .links-container a.forgot-link:hover {
+        color: #667eea;
+        background: transparent;
+    }
+    
+    /* Back to home link */
+    .back-home {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(255,255,255,0.9);
+        padding: 12px 24px;
+        border-radius: 50px;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        z-index: 100;
+    }
+    
+    .back-home:hover {
+        background: white;
+        transform: translateX(-5px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    
+    /* Mobile Responsive Enhancements */
+    @media (max-width: 768px) {
+        .login-container {
+            padding: 32px 24px;
+            margin: 15px;
+            border-radius: 24px;
+        }
+        
+        .login-title {
+            font-size: 28px;
+        }
+        
+        .login-title::after {
+            font-size: 22px;
+            right: -35px;
+            top: -15px;
+        }
+        
+        .form-input {
+            font-size: 16px; /* Prevents iOS zoom */
+            padding: 15px 18px;
+        }
+        
+        .login-button {
+            padding: 16px 24px;
+            font-size: 16px;
+        }
+        
+        .back-home {
+            top: 15px;
+            left: 15px;
+            padding: 10px 18px;
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        body {
+            padding: 15px 10px;
+        }
+        
+        .login-container {
+            padding: 28px 22px;
+            margin: 10px;
+            border-radius: 20px;
+        }
+        
+        .login-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .login-title::after {
+            font-size: 18px;
+            right: -28px;
+            top: -12px;
+        }
+        
+        .form-label {
+            font-size: 13px;
+        }
+        
+        .form-input {
+            padding: 14px 16px;
+            border-radius: 12px;
+        }
+        
+        .login-button {
+            padding: 14px 20px;
+            font-size: 15px;
+            border-radius: 14px;
+        }
+        
+        .links-container {
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+        
+        .links-container a {
+            padding: 10px 16px;
+            font-size: 14px;
+            margin: 8px 0;
+            border-radius: 10px;
+        }
+        
+        .back-home {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 8px 14px;
+            font-size: 13px;
+            border-radius: 25px;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .login-container {
+            padding: 24px 18px;
+        }
+        
+        .login-title {
+            font-size: 22px;
+        }
+        
+        .form-input {
+            padding: 12px 14px;
+        }
+        
+        .login-button {
+            padding: 13px 18px;
+        }
+    }
+    
+    /* Touch-friendly for mobile */
+    @media (hover: none) and (pointer: coarse) {
+        .login-button:active {
+            transform: scale(0.97);
+        }
+        
+        .links-container a:active {
+            background: rgba(102, 126, 234, 0.3);
+            transform: translateX(0);
+        }
+        
+        .back-home:active {
+            transform: scale(0.95);
+        }
+    }
+</style>
 </head> 
-<body> 
+<body>
+<a href="page.html" class="back-home">← Back to Home</a>
+
 <div class="login-container"> 
-<h1 class="login-title">Log-In</h1> 
+    <h1 class="login-title">Log-In</h1> 
  
-        <form class="login-form" method="POST" action="https://api.foodframe.store/login.php"> 
+    <form class="login-form" method="POST" action="https://api.foodframe.store/login.php"> 
+        <label for="email" class="form-label">Username</label> 
+        <input type="text" id="email" name="username" class="form-input" placeholder="Enter your username" required> 
  
+        <label for="password" class="form-label">Password</label> 
+        <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required> 
  
-            <label for="email" class="form-label">E-mail</label> 
-            <input type="email" id="email" name="email" class="form-input" required> 
- 
-            <label for="password" class="form-label">Password</label> 
-            <input type="password" id="password" name="password" class="form-input" 
-required> 
- 
-            <button type="submit" class="login-button">Log-In</button >  <br> 
-           <div> 
-                <a href="https://api.foodframe.store/register.php">Click here for Registration</a>  <br> 
- 
-           </div> 
-            
-         </form> 
-    </div>> 
- 
+        <button type="submit" class="login-button">🚀 Log-In</button>
+    </form>
+    
+    <div class="links-container">
+        <a href="https://api.foodframe.store/register.php">✨ Create New Account</a>
+        <a href="forgot_password.php" class="forgot-link">Forgot Password?</a>
+    </div>
+</div>
+
+<script>
+    // Add ripple effect to button
+    document.querySelector('.login-button').addEventListener('click', function(e) {
+        var rect = this.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        ripple.style.cssText = 'position: absolute; background: rgba(255,255,255,0.4); border-radius: 50%; transform: scale(0); animation: ripple 0.6s linear; pointer-events: none;';
+        ripple.style.left = (e.clientX - rect.left) + 'px';
+        ripple.style.top = (e.clientY - rect.top) + 'px';
+        ripple.style.width = ripple.style.height = '100px';
+        ripple.style.marginLeft = ripple.style.marginTop = '-50px';
+        this.appendChild(ripple);
+        setTimeout(function() { ripple.remove(); }, 600);
+    });
+    
+    // Add focus animation to inputs
+    document.querySelectorAll('.form-input').forEach(function(input) {
+        input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'scale(1.02)';
+        });
+        input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'scale(1)';
+        });
+    });
+</script>
 </body> 
 </html>
